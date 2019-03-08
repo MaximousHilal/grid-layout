@@ -24,6 +24,7 @@ $('.dot').each(function (i, item) {
         $('header').css({
             backgroundImage: `url(${bgi[i]}.jpeg)`
         })
+        $(this).addClass('selected').siblings().removeClass('selected')
     })
 })
 

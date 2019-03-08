@@ -36,8 +36,8 @@ a {
 .grid-container {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 300px);
+    grid-template-columns: auto;
+    grid-auto-rows: 300px;
     grid-gap: 1rem
 }
 
@@ -58,8 +58,8 @@ a {
     z-index: 5;
 }
 
- .close,
-.navbar-close{
+.close,
+.navbar-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -82,8 +82,12 @@ section {
     background-size: 100% 100%;
     position: relative;
 }
+
 header {
     background-attachment: fixed;
+}
+section {
+    grid-column: span 2
 }
 section:hover {
     transition: all 0.5s;
@@ -111,10 +115,12 @@ nav button {
     color: #fff;
     font-size: 24px;
 }
+
 nav .search {
     position: relative;
 }
-nav .search input{
+
+nav .search input {
     margin: 0;
     display: none;
     background: none;
@@ -125,9 +131,11 @@ nav .search input{
     position: absolute;
     right: 25px;
 }
+
 nav .search input:focus {
     outline: none;
 }
+
 .nav-bar {
     width: 0%;
     height: 100%;
@@ -249,6 +257,7 @@ h5 {
     transform: translateX(-50%);
     bottom: 2rem;
 }
+
 .slide-dot .dot {
     width: 10px;
     height: 10px;
@@ -256,6 +265,7 @@ h5 {
     border-radius: 50%;
     background-color: #fff;
 }
+
 .selected {
     background-color: #1e1f21 !important;
 }
@@ -266,7 +276,6 @@ h5 {
 
 /* Header end*/
 
-/* sec-1 start*/
 .sec-1 {
     padding: 0 2rem;
     grid-column: span 2;
@@ -275,59 +284,12 @@ h5 {
     justify-content: space-around;
 }
 
-/* sec-1 end*/
-
-/* sec-2 start*/
-.sec-2 {
-    grid-column: span 4;
-}
-
-/* sec-2 end*/
-
-/* sec-3 start*/
-.sec-3 {
-    grid-column: span 4
-}
-
-/* sec-3 end*/
-
-/* sec-4 start*/
-.sec-4 {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-/* sec-4 end*/
-
-/* sec-5 start*/
-.sec-5 {
-    grid-column: span 2;
-}
-/* sec-5 end*/
-
-/* sec-6 start*/
-.sec-6 {
-    grid-column: span 2;
-}
-
 .sec-6 .contant {
     padding: 0 2rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
-/* sec-6 end*/
-
-/* sec-7 start*/
-.sec-7 {
-    grid-column: span 3;
-}
-/* sec-7 end*/
-
-/* sec-8 start*/
-.sec-8 {
-    grid-column: span 3;
-}
-/* sec-8 end*/
 
 /* footer start*/
 footer {
@@ -347,14 +309,24 @@ footer .social a:not(:last-child) {
 
 /* footer end*/
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
     .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 300px) !important
+        grid-template-columns: repeat(6, 1fr);
     }
 
-    section {
-        grid-row: span 1 !important;
-        grid-column: span 1 !important;
+    .sec-2, .sec-3 {
+        grid-column: span 4;
+    }
+    .sec-4 {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .sec-5, .sec-6 {
+        grid-column: span 2;
+    }
+
+    .sec-7, .sec-8 {
+        grid-column: span 3;
     }
 }
